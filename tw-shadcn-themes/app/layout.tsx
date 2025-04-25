@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import ThemeProvider from '@/components/theme-provider';
-import { inter } from '@/styles/fonts';
 import "@/styles/globals.css";
+import { geistSans, geistMono } from "@/styles/fonts";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "App",
-  description: "Nextjs app",
+  description: "Next app",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
